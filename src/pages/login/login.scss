@@ -1,0 +1,58 @@
+page-login {
+  .icones{
+      zoom: 2.0;
+
+    //background: #3581B8;
+
+    color:whitesmoke;
+  }
+  .iconess{
+    zoom: 2.0;
+
+
+  }
+
+  ////////////////////////
+
+.container {
+
+    padding: 30px;
+
+    background-color: white;
+    border-radius: 10px ;
+
+    color:rgb(15, 11, 11);
+
+  }
+
+
+
+  /////////
+.bg-login {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ background:linear-gradient(to bottom,color($colors,light)0%,color($colors,vermelho)100%);
+ left: 0;
+ right: 0;
+ bottom: 0;
+
+.estacao-logo-login {
+  width: 80%
+}
+.ctaLogin {
+  font-size: 18px;
+  margin-left: 7%;
+  width: 90%;
+  border-radius:10px;
+  background:brown;
+  color: rgb(15, 11, 11);
+}
+
+  ion-input {
+      --color:#FFF;
+}
+}
+}
+
+

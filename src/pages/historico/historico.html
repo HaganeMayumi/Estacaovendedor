@@ -1,0 +1,93 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left>
+      <button *ngIf="!isOpen" ion-button icon-menu icon-only (click)="openNexus()">
+        <img src="assets/icon/menu.svg" />
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="!isOpen" class="animated bounce">
+      HISTÓRICO
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-login">
+
+    <ion-searchbar placeholder="Pesquisar"></ion-searchbar>
+<ion-toolbar class="style">
+
+  <ion-list>
+  <ion-item>
+      <ion-label stacked >Escolha</ion-label>
+
+        <ion-select  [(ngModel)]="escolha">
+            <ion-option >Pedidos Realizados</ion-option>
+            <ion-option >Pedios cancelados</ion-option>
+          </ion-select>
+
+
+
+  </ion-item>
+
+</ion-list>
+
+</ion-toolbar>
+
+<ion-card style="background-color: whitesmoke; border-radius: 20px;">
+  <ion-card-header style="text-align: center">Pedidos realizados</ion-card-header>
+<ion-list>
+  <ion-item>
+    <ion-icon color="secondary" class="icos" ios="ios-checkmark-circle" md="md-checkmark-circle" item-start></ion-icon>
+    <h2>Esmalte Annita</h2>
+    <br>
+    <p>Cartão de Credito</p>
+    <ion-note item-end>
+      <h2>R$ 3,99</h2>
+      <br>
+      <p>Pedido Concluido</p>
+    </ion-note>
+  </ion-item>
+
+
+</ion-list>
+
+</ion-card>
+
+
+
+</ion-content>
+<div class="menu-nexus">
+  <div class="menu-nexus-backdrop"></div>
+  <div class="menu-nexus-wrapper"  @menuNexus (@menuNexus.done)="animEnd($event)" *ngIf="isOpen">
+    <div class="menu-nexus-content" [ngClass]="{'content-visible': isOpen}">
+        <figure class="user-picture " [ngClass]="startAnim" *ngIf="isOpen">
+            <img src="assets/imgs/user.jpg" />
+        </figure>
+        <ion-list class="menu-nexus-list" no-lines padding [ngClass]="startAnim" *ngIf="isOpen" >
+
+          <button ion-item (click)="goToAuditoria()">
+            <ion-icon name="md-barcode"></ion-icon> Auditoria
+          </button>
+          <button ion-item (click)="goToChat()">
+            <ion-icon name="chatboxes"></ion-icon> Chat Clientes
+          </button>
+          <button ion-item (click)="goToUsuarios()">
+            <ion-icon name="md-contact"></ion-icon> Usuário
+          </button>
+          <button ion-item (click)="goToHistorico()">
+            <ion-icon name="paper"></ion-icon> Histórico
+          </button>
+          <button ion-item (click)="goToFaq()">
+            <ion-icon name="help-circle"></ion-icon> FAQ
+          </button>
+          <button ion-item>
+            <ion-icon name="log-out"></ion-icon> Sair
+          </button>
+        </ion-list>
+    </div>
+  </div>
+  <button class="menu-nexus-btn-close" @menuNexusBtnClose *ngIf="isOpen" (click)="openNexus()" >
+    <ion-icon name="md-close"></ion-icon>
+  </button>
+</div>

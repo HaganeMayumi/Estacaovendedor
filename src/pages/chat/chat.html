@@ -1,0 +1,100 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left>
+      <button *ngIf="!isOpen" ion-button icon-menu icon-only (click)="openNexus()">
+        <img src="assets/icon/menu.svg" />
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="!isOpen" class="animated bounce">
+      CHAT
+    </ion-title>
+  </ion-navbar>
+  
+  <ion-item>
+    <ion-toggle color="secondary" checked="true" style="background-color: white; border-radius: 10px"></ion-toggle>
+  </ion-item>
+  
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Pesquisar Cliente"></ion-searchbar>
+
+  <br>
+
+  <ion-list>
+    <ion-item>
+      <ion-card class="item-chat" style="border-radius: 10px">
+        <ion-card-header>Cliente Fulano</ion-card-header>
+        <ion-avatar>
+          <ion-img src='assets/imgs/user.jpg' style="zoom: 1.5"></ion-img>
+        </ion-avatar>
+        <ion-buttons end>
+          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatIn()">
+            <ion-icon name="text"></ion-icon>
+          </button>
+          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="showAlert()">
+            <ion-icon ios="ios-close-circle" md="md-close-circle"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-card>
+    </ion-item>
+
+    <ion-item>
+      <ion-card class="item-chat" style="border-radius: 10px">
+        <ion-card-header>Cliente Ciclano</ion-card-header>
+        <ion-avatar>
+          <ion-img src='assets/imgs/user.jpg' style="zoom: 1.5"></ion-img>
+        </ion-avatar>
+        <ion-buttons end>
+          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatIn()">
+            <ion-icon name="text"></ion-icon>
+          </button>
+          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="showAlert()">
+            <ion-icon ios="ios-close-circle" md="md-close-circle"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<div class="menu-nexus">
+  <div class="menu-nexus-backdrop"></div>
+  <div class="menu-nexus-wrapper" @menuNexus (@menuNexus.done)="animEnd($event)" *ngIf="isOpen">
+    <div class="menu-nexus-content" [ngClass]="{'content-visible': isOpen}">
+      <figure class="user-picture " [ngClass]="startAnim" *ngIf="isOpen">
+        <img src="assets/imgs/user.jpg" />
+      </figure>
+      <ion-list class="menu-nexus-list" no-lines padding [ngClass]="startAnim" *ngIf="isOpen">
+
+        <button ion-item (click)="goToAuditoria()">
+          <ion-icon name="md-barcode"></ion-icon> Auditoria
+        </button>
+        <button ion-item (click)="Chat()">
+          <ion-icon name="chatboxes"></ion-icon> Chat Clientes
+        </button>
+        <button ion-item (click)="Cursos()">
+          <ion-icon ios="ios-easel" md="md-easel"></ion-icon> Cursos/Promoções
+        </button>
+        <button ion-item (click)="goToHistorico()">
+          <ion-icon name="paper"></ion-icon> Histórico
+        </button>
+        <button ion-item (click)="Faq()">
+          <ion-icon name="help-circle"></ion-icon> FAQ
+        </button>
+        <button ion-item>
+          <ion-icon name="log-out"></ion-icon> Sair
+        </button>
+      </ion-list>
+    </div>
+  </div>
+  <button class="menu-nexus-btn-close" @menuNexusBtnClose *ngIf="isOpen" (click)="openNexus()">
+    <ion-icon name="md-close"></ion-icon>
+  </button>
+</div>

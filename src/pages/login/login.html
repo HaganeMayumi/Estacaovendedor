@@ -1,0 +1,129 @@
+
+<ion-content overflow:hidden>
+    <div class="bg-login">
+
+    <div class="center padding-top-40">
+        <img src="./assets/imgs/teste2.png" class="estacao-logo-login">
+
+        <div padding>
+            <ion-segment color="dark"  [(ngModel)]="selecionar">
+              <ion-segment-button style="font-size: 18px;"  value="entrar">
+                Entrar
+              </ion-segment-button>
+              <ion-segment-button style="font-size: 18px;" value="cadastrar">
+                Cadastrar
+              </ion-segment-button>
+            </ion-segment>
+
+          </div>
+            <div [ngSwitch]="selecionar" class="  padding-40">
+              <ion-list  *ngSwitchCase="'entrar'">
+                  <ion-card class="container">
+
+                      <ion-item class="bg-transparent no-padding"  no-lines>
+                          <ion-input type="text" placeholder="Email" style="font-size: 18px" ></ion-input>
+                      </ion-item>
+                          <ion-item class="bg-transparent no-padding  " no-lines>
+                              <ion-input type="password" placeholder="Senha" style="font-size: 18px"></ion-input>
+                            </ion-item>
+
+
+                                  <button ion-button round class="ctaLogin center bold mg-top-30" (click)="goToHomePage()">
+                                    Entrar
+                                </button>
+
+                               </ion-card>
+              </ion-list>
+
+              <ion-list *ngSwitchCase="'cadastrar'">
+                  <ion-card class="container">
+                          <ion-item class="bg-transparent no-padding"  no-lines>
+                          <ion-input type="text" placeholder="Email" style="font-size: 18px"></ion-input>
+                          </ion-item>
+                          <ion-item class="bg-transparent no-padding  " no-lines>
+                              <ion-input type="password" placeholder="Senha"style="font-size: 18px"></ion-input>
+                            </ion-item>
+                            <ion-item class="bg-transparent no-padding  " no-lines>
+                                <ion-input type="password" placeholder="Confirmar Senha" style="font-size: 18px"></ion-input>
+                              </ion-item>
+
+                              <button ion-button round class="ctaLogin center bold mg-top-30" >
+                                  Cadastrar
+                              </button>
+                   </ion-card>
+              </ion-list>
+            </div>
+
+    </div>
+    </div>
+
+        </ion-content>
+
+
+
+<!--
+  <ion-slides pager style="height: 400px;">
+      <ion-slide>
+          <ion-note color="dark">É Novo aqui? Arraste para a direita!</ion-note>
+        <ion-card style="height: 150%;background-color: white;border-radius: 20px !important;">
+            <ion-item style="background-color: transparent;">
+                  <ion-label style="font-size: 25px;" stacked>Login:</ion-label>
+                  <ion-input type="text" placeholder="email"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label style="font-size: 25px;" stacked>Senha:</ion-label>
+                  <ion-input type="password" placeholder="senha"></ion-input>
+                </ion-item>
+
+                    <ion-item>
+
+                        <button ion-button full style=" height: 40px;text-align: center" (click)="Acessar()" color="danger" round>
+                         <ion-spinner  [paused]="toggleSpinner"></ion-spinner>Entrar
+                        </button>
+
+                       </ion-item>
+
+
+
+                     </ion-card>
+
+
+                   </ion-slide>
+
+
+           <ion-slide>
+             <ion-note color="dark">Cadastre-se</ion-note>
+             <ion-card style="height: 350px;background-color: white;border-radius: 20px !important;">
+                  <ion-item style="background-color: transparent;">
+                 <ion-label style="font-size: 20px;" floating>Login:</ion-label>
+                 <ion-input type="text" ></ion-input>
+               </ion-item>
+               <ion-item>
+                 <ion-label style="font-size: 20px;" floating>Senha:</ion-label>
+                 <ion-input type="password"></ion-input>
+               </ion-item>
+               <ion-item style="background-color: transparent;">
+                   <ion-label style="font-size: 20px;" floating>Confirmar Senha:</ion-label>
+                   <ion-input type="password" ></ion-input>
+                 </ion-item>
+                 <ion-item>
+                   <button  full style="  height: 30px; text-align: center" ion-button color="danger" round>Cadastrar-se</button>
+                     <button full style="height: 30px;text-align: center"  ion-button round color="danger">
+                        <ion-icon name="logo-facebook">
+                       </ion-icon>
+                       Criar usando Facebook
+                        </button>
+                        <button full style=" height: 30px; text-align: center"  round ion-button color="danger">
+                           <ion-icon name="logo-google"></ion-icon> Criar Usando Google
+                        </button>
+                       </ion-item>
+
+               </ion-card>
+           </ion-slide>
+
+
+         </ion-slides>
+
+
+
+-->

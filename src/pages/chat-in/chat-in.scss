@@ -1,0 +1,15 @@
+page-chat-in {
+    ion-title{
+        transition: all 0.3s;
+        text-align: center;
+        .toolbar-title{
+        //$color-one
+          color: black  !important;
+        }
+      }
+      // botão de retorno do header de preto
+      .back-button-md,
+      .back-button-ios {
+        color: black ;
+      }
+}

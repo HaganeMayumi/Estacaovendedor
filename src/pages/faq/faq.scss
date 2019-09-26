@@ -1,0 +1,9 @@
+page-faq {
+  ion-title {
+    transition: all 0.3s;
+    .toolbar-title {
+      //$color-one
+      color: black !important;
+    }
+  }
+}

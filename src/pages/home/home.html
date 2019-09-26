@@ -1,0 +1,114 @@
+<ion-header style="color:black;" no-border>
+  <ion-navbar>
+    <ion-buttons left>
+      <button *ngIf="!isOpen" ion-button icon-menu icon-only (click)="openNexus()">
+        <img src="assets/icon/menu.svg" />
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="!isOpen" class="animated bounce">
+      DELIVERY
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-login">
+  <ion-searchbar style="border-radius: 10px ;" placeholder="Pesquisar"></ion-searchbar>
+  <ion-card class="style2 ">
+    <ion-card-header style="font-size: 20px; text-align: center">Código: 567489329
+      <p>Maria Beltrano </p>
+    </ion-card-header>
+
+    <div style="margin-left: 110px; display: flex; ">
+      <button ion-button (tap)="aumentar($event)" class="btn" icon-only clear>
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <h2 style="text-align: center; margin-top: 5px;">
+        {{tap}} min
+      </h2>
+
+      <button (tap)="diminuir($event)" class="btn" ion-button icon-only clear>
+        <ion-icon name="remove"></ion-icon>
+      </button>
+    </div>
+
+    <ion-list>
+      <ion-item-sliding #item>
+        <ion-item>
+          Preparando Mercadoria
+          <ion-icon item-end color="secondary" name="ios-arrow-back-outline"></ion-icon>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="secondary" (click)="details()">ACEITAR</button></ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+  </ion-card>
+  <ion-card class="style2 ">
+    <ion-card-header style="font-size: 20px; text-align: center">Código: 010101010
+      <p>Joao Paulo </p>
+    </ion-card-header>
+
+    <div style="margin-left: 110px; display: flex; ">
+
+
+      <button ion-button (tap)="aumentar($event)" class="btn" icon-only clear>
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <h2 style="text-align: center; margin-top: 5px;">
+        {{tap}} min
+      </h2>
+
+      <button (tap)="diminuir($event)" class="btn" ion-button icon-only clear>
+        <ion-icon name="remove"></ion-icon>
+      </button>
+    </div>
+
+    <ion-list>
+      <ion-item-sliding #item>
+        <ion-item>
+          Preparando Mercadoria
+          <ion-icon item-end color="secondary" name="ios-arrow-back-outline"></ion-icon>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="secondary" (click)="details()">ACEITAR</button></ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+  </ion-card>
+
+
+</ion-content>
+<div class="menu-nexus">
+  <div class="menu-nexus-backdrop"></div>
+  <div class="menu-nexus-wrapper" @menuNexus (@menuNexus.done)="animEnd($event)" *ngIf="isOpen">
+    <div class="menu-nexus-content" [ngClass]="{'content-visible': isOpen}">
+      <figure class="user-picture " [ngClass]="startAnim" *ngIf="isOpen">
+        <img src="assets/imgs/user.jpg" />
+      </figure>
+      <ion-list class="menu-nexus-list" no-lines padding [ngClass]="startAnim" *ngIf="isOpen">
+
+        <button ion-item (click)="goToAuditoria()">
+          <ion-icon name="md-barcode"></ion-icon> Auditoria
+        </button>
+        <button ion-item (click)="Chat()">
+          <ion-icon name="chatboxes"></ion-icon> Chat Clientes
+        </button>
+        <button ion-item (click)="Cursos()">
+          <ion-icon ios="ios-easel" md="md-easel"></ion-icon> Cursos/Promoções
+        </button>
+        <button ion-item (click)="goToHistorico()">
+          <ion-icon name="paper"></ion-icon> Histórico
+        </button>
+        <button ion-item (click)="Faq()">
+          <ion-icon name="help-circle"></ion-icon> FAQ
+        </button>
+        <button ion-item>
+          <ion-icon name="log-out"></ion-icon> Sair
+        </button>
+      </ion-list>
+    </div>
+  </div>
+  <button class="menu-nexus-btn-close" @menuNexusBtnClose *ngIf="isOpen" (click)="openNexus()">
+    <ion-icon name="md-close"></ion-icon>
+  </button>
+</div>
