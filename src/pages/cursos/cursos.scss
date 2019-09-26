@@ -1,4 +1,9 @@
 page-cursos {
+  ion-header{
+    .toolbar-background{
+      background-color: transparent !important;
+    }
+    }
   ion-title {
     transition: all 0.3s;
     .toolbar-title {
