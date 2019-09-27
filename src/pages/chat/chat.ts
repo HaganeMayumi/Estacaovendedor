@@ -24,6 +24,11 @@ export class ChatPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
+  getItems(toggle){
+    if(toggle==false) return true;
+    return false;
+  }
+
   openNexus(){
     this.isOpen = !this.isOpen;
   }

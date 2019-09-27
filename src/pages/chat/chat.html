@@ -14,11 +14,13 @@
     <ion-title *ngIf="!isOpen" class="animated bounce">
       CHAT
     </ion-title>
+    <ion-buttons end *ngIf="!isOpen">
+      <span>ONLINE</span>
+      <ion-toggle color="secondary" checked="false" (click)="isToggleOn()"></ion-toggle>
+    </ion-buttons>
   </ion-navbar>
-  <ion-label>
-    Online
-    <ion-toggle color="secondary" checked="true" style="background-color: white; border-radius: 10px"></ion-toggle>
-  </ion-label>
+
+
 
 </ion-header>
 
@@ -35,10 +37,12 @@
           <ion-img src='assets/imgs/user.jpg' style="zoom: 1.5"></ion-img>
         </ion-avatar>
         <ion-buttons end>
-          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatIn()">
+          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatIn()"
+            [disabled]="isToggleOn()">
             <ion-icon name="text"></ion-icon>
           </button>
-          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="showAlert()">
+          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="showAlert()"
+            [disabled]="isToggleOn()">
             <ion-icon ios="ios-close-circle" md="md-close-circle"></ion-icon>
           </button>
         </ion-buttons>
