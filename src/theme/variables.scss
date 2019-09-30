@@ -43,10 +43,12 @@ $colors: (
   claro:      #FFFF84,
   amarelo:    #ffff00,
   verde:      #2EFF2A,
-  wwhite:    whitesmoke
+  wwhite:    whitesmoke,
+  cinza: grey,
+  branco: white
 );
 
-$app-background: linear-gradient(to bottom, color($colors, light) 0%, color($colors, wwhite) 100%);
+$app-background: linear-gradient(to bottom, color($colors, light) 0%, color($colors, branco) 100%);
 $background-color: transparent;
 $toolbar-background: transparent;
 

@@ -1,5 +1,5 @@
 <ion-header no-border>
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-buttons left>
       <button *ngIf="!isOpen" ion-button icon-menu icon-only (click)="openNexus()">
         <img src="assets/icon/menu.svg" />
@@ -21,9 +21,10 @@
   <ion-item>
       <ion-label stacked >Escolha</ion-label>
 
-        <ion-select  [(ngModel)]="escolha">
-            <ion-option >Pedidos Realizados</ion-option>
-            <ion-option >Pedios cancelados</ion-option>
+        <ion-select  [(ngModel)]="escolha" cancelText="cancelar" okText="ok!">
+          <ion-option >Vendas Concluidas</ion-option>
+          <ion-option >Chats Encerrados</ion-option>
+
           </ion-select>
 
 
@@ -69,16 +70,13 @@
           <button ion-item (click)="goToAuditoria()">
             <ion-icon name="md-barcode"></ion-icon> Auditoria
           </button>
-          <button ion-item (click)="goToChat()">
+          <button ion-item (click)="Chat()">
             <ion-icon name="chatboxes"></ion-icon> Chat Clientes
-          </button>
-          <button ion-item (click)="goToUsuarios()">
-            <ion-icon name="md-contact"></ion-icon> Usuário
           </button>
           <button ion-item (click)="goToHistorico()">
             <ion-icon name="paper"></ion-icon> Histórico
           </button>
-          <button ion-item (click)="goToFaq()">
+          <button ion-item (click)="Faq()">
             <ion-icon name="help-circle"></ion-icon> FAQ
           </button>
           <button ion-item>

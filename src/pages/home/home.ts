@@ -21,7 +21,6 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
   openNexus() {
     this.isOpen = !this.isOpen;
   }

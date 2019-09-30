@@ -49,7 +49,7 @@ import{ProdutosPage} from'../pages/produtos/produtos';
     HistoricoPage,
     ProdutosPage,
     CursosPage
-    
+
   ],
   providers: [
     StatusBar,

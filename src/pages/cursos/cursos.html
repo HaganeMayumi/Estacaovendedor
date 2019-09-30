@@ -12,33 +12,25 @@
       </button>
     </ion-buttons>
     <ion-title *ngIf="!isOpen" class="animated bounce">
-      Cursos e Promoções
+     Marketing
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-fab right top>
-    <button ion-fab style="background: transparent">
-      <ion-icon ios="ios-more" md="md-more"></ion-icon>
-    </button>
-    <ion-fab-list side="bottom">
-      <button ion-fab>
-        <ion-icon ios="ios-folder-open" md="md-folder-open"></ion-icon>
-      </button>
-      <button ion-fab>
-        <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
-      </button>
-      <button ion-fab>
-        <ion-icon ios="ios-create" md="md-create"></ion-icon>
-      </button>
-      <button ion-fab>
-        <ion-icon name="md-share"></ion-icon>
-      </button>
-    </ion-fab-list>
-  </ion-fab>
+<ion-card>
+<ion-card-header>Escolhar as opçoes ao Lado</ion-card-header>
 
+</ion-card>
+<ion-footer>
+    <ion-toolbar>
+        <button ion-fab color="primary">
+          <ion-icon name="send"></ion-icon>
+        </button>
+
+    </ion-toolbar>
+  </ion-footer>
 
 </ion-content>
 
@@ -57,9 +49,7 @@
         <button ion-item (click)="Chat()">
           <ion-icon name="chatboxes"></ion-icon> Chat Clientes
         </button>
-        <button ion-item (click)="goToUsuarios()">
-          <ion-icon ios="ios-easel" md="md-easel"></ion-icon> Cursos/Promoções
-        </button>
+
         <button ion-item (click)="goToHistorico()">
           <ion-icon name="paper"></ion-icon> Histórico
         </button>
@@ -76,3 +66,28 @@
     <ion-icon name="md-close"></ion-icon>
   </button>
 </div>
+
+
+<!-- <ion-fab right top>
+    <button ion-fab >
+      <ion-icon ios="ios-more" md="md-more"></ion-icon>
+    </button>
+    <ion-fab-list side="bottom">
+      <button ion-fab>
+        <ion-icon ios="ios-folder-open" md="md-folder-open"></ion-icon>
+        <ion-label>Selecionar fotos</ion-label>
+      </button>
+      <button ion-fab>
+        <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+        <ion-label>Tirar fotos</ion-label>
+      </button>
+      <button ion-fab>
+        <ion-icon ios="ios-create" md="md-create"></ion-icon>
+        <ion-label>Ofertas</ion-label>
+      </button>
+      <button ion-fab>
+        <ion-icon name="md-share"></ion-icon>
+        <ion-label>Compartilhar</ion-label>
+      </button>
+    </ion-fab-list>
+  </ion-fab>-->

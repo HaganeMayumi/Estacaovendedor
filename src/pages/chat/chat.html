@@ -13,11 +13,11 @@
     </ion-buttons>
     <ion-title *ngIf="!isOpen" class="animated bounce">
       CHAT
+
+
+
+
     </ion-title>
-    <ion-buttons end *ngIf="!isOpen">
-      <span>ONLINE</span>
-      <ion-toggle color="secondary" checked="false" (click)="isToggleOn()"></ion-toggle>
-    </ion-buttons>
   </ion-navbar>
 
 
@@ -30,6 +30,11 @@
   <br>
 
   <ion-list>
+    <ion-list-header style="text-align: center;">Atendimento Benjamin</ion-list-header>
+    <ion-item>
+      <ion-label inline> Ativar/Desativar Atendimento</ion-label>
+        <ion-toggle  color="secondary" checked="true"></ion-toggle>
+    </ion-item>
     <ion-item>
       <ion-card class="item-chat" style="border-radius: 10px">
         <ion-card-header>Cliente Fulano</ion-card-header>
@@ -37,12 +42,12 @@
           <ion-img src='assets/imgs/user.jpg' style="zoom: 1.5"></ion-img>
         </ion-avatar>
         <ion-buttons end>
-          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatIn()"
-            [disabled]="isToggleOn()">
+          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatGo()"
+            >
             <ion-icon name="text"></ion-icon>
           </button>
           <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="showAlert()"
-            [disabled]="isToggleOn()">
+           >
             <ion-icon ios="ios-close-circle" md="md-close-circle"></ion-icon>
           </button>
         </ion-buttons>
@@ -56,7 +61,7 @@
           <ion-img src='assets/imgs/user.jpg' style="zoom: 1.5"></ion-img>
         </ion-avatar>
         <ion-buttons end>
-          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatIn()">
+          <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatGo()">
             <ion-icon name="text"></ion-icon>
           </button>
           <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="showAlert()">
@@ -84,7 +89,7 @@
           <ion-icon name="chatboxes"></ion-icon> Chat Clientes
         </button>
         <button ion-item (click)="Cursos()">
-          <ion-icon ios="ios-easel" md="md-easel"></ion-icon> Cursos/Promoções
+          <ion-icon ios="ios-easel" md="md-easel"></ion-icon>Marketing
         </button>
         <button ion-item (click)="goToHistorico()">
           <ion-icon name="paper"></ion-icon> Histórico

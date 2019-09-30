@@ -4,6 +4,8 @@ import { AuditoriaPage } from '../auditoria/auditoria';
 import { ChatPage } from '../chat/chat';
 import { FaqPage } from '../faq/faq';
 import { animationsList } from '../../app/animations';
+import { ProdutosPage } from '../produtos/produtos';
+import { CursosPage } from '../cursos/cursos';
 
 @IonicPage()
 @Component({
@@ -14,7 +16,7 @@ import { animationsList } from '../../app/animations';
 export class HistoricoPage {
   isOpen: boolean;
   startAnim: string;
-
+  escolha: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -31,15 +33,25 @@ export class HistoricoPage {
     console.log(e);
     this.startAnim = 'animate-running';
   }
-
+  Faq() {
+    this.navCtrl.push(FaqPage);
+  }
+  Chat() {
+    this.navCtrl.push(ChatPage);
+  }
   goToAuditoria() {
     this.navCtrl.push(AuditoriaPage);
   }
-  goToChat() {
-    this.navCtrl.push(ChatPage);
+  goToHistorico() {
+    this.navCtrl.push(HistoricoPage);
+  }
+  details() {
+    this.navCtrl.push(ProdutosPage);
+  }
+  Cursos(){
+    this.navCtrl.push(CursosPage);
   }
 
-  goToFaq() {
-    this.navCtrl.push(FaqPage);
-  }
+
+
 }
