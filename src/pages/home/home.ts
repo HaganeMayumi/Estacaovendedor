@@ -7,6 +7,7 @@ import { CursosPage } from '../cursos/cursos';
 import{ProdutosPage} from '../produtos/produtos';
 import{HistoricoPage} from '../historico/historico';
 import{ AuditoriaPage} from '../auditoria/auditoria';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -18,9 +19,10 @@ export class HomePage {
   startAnim: string;
   public tap: number = 0;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
   }
+
   openNexus() {
     this.isOpen = !this.isOpen;
   }
@@ -51,10 +53,12 @@ export class HomePage {
   Cursos(){
     this.navCtrl.push(CursosPage);
   }
-  aumentar(e) {
-    this.tap++
-  }
-  diminuir(e) {
-    this.tap--
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Entrega aceita',
+      subTitle: 'Você será direcionado para a página de detalhes da compra',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 }

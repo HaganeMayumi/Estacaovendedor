@@ -120,10 +120,6 @@ page-home {
 
 
 
-.style2{
-  background-color: white;
-  border-radius: 20px;
-}
 .direc{
   left: 10%;
 }
@@ -138,4 +134,10 @@ ion-searchbar{
 .back-button-ios {
   color: black ;
 }
-
+.botao-delivery{
+  background: linear-gradient(#90E8AA, #32db64);
+}
+.card-delivery{
+  background: linear-gradient(#ffffff, #da5a41);
+  border-radius: 20px;
+}
