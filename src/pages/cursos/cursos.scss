@@ -132,9 +132,7 @@ page-cursos {
     left: 10%;
   }
 
-  ion-card{
 
-  }
 button[ion-fab] {
     overflow: visible;
     position: relative;
@@ -156,5 +154,10 @@ button[ion-fab] {
     contain: layout;
 }
 
+.cards{
+  box-shadow: 4px 4px 12px black;
+  border-radius: 10px;
+
+}
 
 }

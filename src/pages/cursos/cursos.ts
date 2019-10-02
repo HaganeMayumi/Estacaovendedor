@@ -24,10 +24,11 @@ export class CursosPage {
   isOpen: boolean;
   startAnim: string;
   public tap: number = 0;
-
+  opcao: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.opcao = "ofertas";
   }
-  
+
 
   openNexus() {
     this.isOpen = !this.isOpen;

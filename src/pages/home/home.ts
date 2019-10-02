@@ -22,6 +22,9 @@ export class HomePage {
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
   }
+  Home(){
+    this.navCtrl.push(HomePage);
+  }
 
   openNexus() {
     this.isOpen = !this.isOpen;

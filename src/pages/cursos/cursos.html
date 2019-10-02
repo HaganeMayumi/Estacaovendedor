@@ -1,9 +1,3 @@
-<!--
-  Generated template for the CursosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header no-border>
   <ion-navbar hideBackButton>
     <ion-buttons left>
@@ -15,22 +9,192 @@
      Marketing
     </ion-title>
   </ion-navbar>
+
+<ion-toolbar *ngIf="!isOpen" no-border-top>
+
+    <div padding>
+      <ion-segment color="danger" [(ngModel)]="opcao">
+      <ion-segment-button value="ofertas">
+        Promoções
+      </ion-segment-button>
+      <ion-segment-button value="sorteios">
+        Sorteios
+      </ion-segment-button>
+      <ion-segment-button value="cursos">
+        Cursos
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <div [ngSwitch]="opcao">
+        <ion-list *ngSwitchCase="'ofertas'">
+          <ion-card class="cards">
+            <ion-card-title style="text-align: center">Cadastre suas Promoções </ion-card-title>
+            <img src="assets/imgs/anitta.jpg"/>
+            <ion-card-content>
+                <ion-searchbar placeholder="buscar produto"></ion-searchbar>
+              <ion-item>
+                <ion-label stacked>
+                  Insira a porcentagem de desconto:
+                </ion-label>
+                <ion-input type="tel" placeholder="Valor %"></ion-input>
+              </ion-item>
 
-<ion-card>
-<ion-card-header>Escolhar as opçoes ao Lado</ion-card-header>
+              <ion-item>
+                <button full style="height: 40px" ion-button round color="secondary">
+                  Ofertar
+                  <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>
+                </button>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
 
-</ion-card>
-<ion-footer>
-    <ion-toolbar>
-        <button ion-fab color="primary">
-          <ion-icon name="send"></ion-icon>
-        </button>
+          <ion-card class="cards">
+            <ion-card-header style="text-align: center">Cadastre os Cupoms</ion-card-header>
+            <ion-list>
+              <ion-item>
+                <ion-label text-wrap>
+                  Escreva Nome do Cupom
+                </ion-label>
+                <ion-input type="text" placeholder="codigo cupom"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label stacked>Valido até:</ion-label>
+                <ion-datetime displayFormat="DD de MMM, YYYY "  monthShortNames="jan, fev, mar,abr, mai,jun,jul,ago,set,out,nov,dez" doneText="Feito" ></ion-datetime>
+              </ion-item>
+              <ion-item>
+                  <button full style="height: 40px" ion-button round color="secondary">
+                    Cadastrar
+                    <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>
+                  </button>
+                </ion-item>
+            </ion-list>
+          </ion-card>
 
-    </ion-toolbar>
-  </ion-footer>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'sorteios'">
+          <ion-card class="cards">
+            <ion-card-header>Preencha as informações</ion-card-header>
+            <ion-list>
+              <ion-list-header style="text-align: center"> Sorteio pelo Aplicativo</ion-list-header>
+              <ion-item>
+                  <ion-label stacked>
+                   Descreva o tipo de sorteio:
+                  </ion-label>
+                  <ion-input type="text" placeholder="Desrição"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <button full style="height: 40px" ion-button round color="dark">
+                        Tirar Foto
+                        <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                      </button>
+                      <button full style="height: 40px" ion-button round>
+                          Selecionar foto
+                          <ion-icon ios="ios-folder" md="md-folder"></ion-icon>
+                        </button>
+                </ion-item>
+
+                <ion-item>
+                    <button full style="height: 40px" ion-button round color="secondary">
+                        Sortear
+                        <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>
+                    </button>
+                  </ion-item>
+
+
+              <ion-item>
+                  <h2 text-wrap>
+                    Usuário Sorteado é:<br>
+                    </h2>
+                    <h1 text-wrap> Ivan !!!!!
+                        Contatos: 32720530 , email tal@gmail.com
+                     </h1>
+              </ion-item>
+            </ion-list>
+            <button full style="height: 40px" ion-button round color="danger">
+              Compartilhar
+              <ion-icon ios="ios-share" md="md-share"></ion-icon>
+          </button>
+          </ion-card>
+
+
+        </ion-list>
+        <ion-list *ngSwitchCase="'cursos'">
+              <ion-card class="cards">
+                <ion-card-header style="text-align: center">
+                  Cadastre seus Cursos
+                </ion-card-header>
+                <ion-card-content>
+                  <img src="assets/imgs/anitta.jpg"/>
+                 <div style="display: flex; justify-content: center">
+                    <button  ion-button clear color="dark">
+                      Selecionar Foto
+                      <ion-icon ios="ios-image" md="md-image"></ion-icon>
+                    </button>
+                    <button  ion-button clear color="dark">
+                       Tirar Foto
+                       <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                      </button>
+                  </div>
+                  </ion-card-content>
+                 <ion-list>
+                    <ion-item>
+                        <ion-label stacked text-wrap>Nome do Instrutor:</ion-label>
+                        <ion-input type="text" placeholder="nome"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                          <ion-label stacked text-wrap>Descreva sobre sua formação ou experiência:</ion-label>
+                          <ion-input type="text" placeholder="experiencia"></ion-input>
+                      </ion-item>
+                  <ion-item>
+                     <ion-label stacked>
+                       Descreva o nome do Curso:
+                      </ion-label>
+                      <ion-input type="text" placeholder="descrição"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>
+                          Telefone para Contato
+                          <ion-icon ios="logo-whatsapp" md="logo-whatsapp"></ion-icon>
+                         </ion-label>
+                         <ion-input type="tel" placeholder="DDD"></ion-input>
+                       </ion-item>
+                    <ion-item>
+                        <ion-label stacked>
+                          Valor do Curso
+                         </ion-label>
+                         <ion-input type="tel" placeholder="R$"></ion-input>
+                       </ion-item>
+                         <ion-item>
+                            <ion-label stacked>
+                              Local do Curso
+                             </ion-label>
+                             <ion-input type="text" placeholder="nome"></ion-input>
+                           </ion-item>
+
+                         <ion-item>
+                          <ion-label stacked>
+                            Selecione a Data e Hora do Curso:
+                          </ion-label>
+                          <ion-datetime displayFormat="DD MMM, YYYY HH:mm"  monthShortNames="jan, fev, mar,abr, mai,jun,jul,ago,set,out,nov,dez" doneText="Feito" ></ion-datetime>
+                         </ion-item>
+
+                         </ion-list>
+                         <button full style="height: 40px" ion-button round color="secondary">
+                            Confirmar curso
+                            <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+                        </button>
+              </ion-card>
+
+        </ion-list>
+
+      </div>
+
 
 </ion-content>
 
@@ -68,26 +232,25 @@
 </div>
 
 
-<!-- <ion-fab right top>
-    <button ion-fab >
+<!--
+<ion-fab right top>
+    <button color="secondary" ion-fab >
       <ion-icon ios="ios-more" md="md-more"></ion-icon>
     </button>
     <ion-fab-list side="bottom">
-      <button ion-fab>
+      <button color="danger" ion-fab>
         <ion-icon ios="ios-folder-open" md="md-folder-open"></ion-icon>
-        <ion-label>Selecionar fotos</ion-label>
+        <ion-label>Criar Promoção</ion-label>
       </button>
       <button ion-fab>
         <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
-        <ion-label>Tirar fotos</ion-label>
+        <ion-label>Sorteio</ion-label>
       </button>
       <button ion-fab>
         <ion-icon ios="ios-create" md="md-create"></ion-icon>
         <ion-label>Ofertas</ion-label>
       </button>
-      <button ion-fab>
-        <ion-icon name="md-share"></ion-icon>
-        <ion-label>Compartilhar</ion-label>
-      </button>
+
     </ion-fab-list>
-  </ion-fab>-->
+  </ion-fab>
+ -->
