@@ -8,6 +8,7 @@ import { HistoricoPage } from '../historico/historico';
 import { ProdutosPage } from '../produtos/produtos';
 import { CursosPage } from '../cursos/cursos';
 import { FaqPage } from '../faq/faq';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ChatPage page.
@@ -72,6 +73,9 @@ export class ChatPage {
   }
   Cursos(){
     this.navCtrl.push(CursosPage);
+  }
+  Home(){
+    this.navCtrl.push(HomePage);
   }
 
 }

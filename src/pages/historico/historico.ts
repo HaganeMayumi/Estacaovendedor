@@ -6,6 +6,7 @@ import { FaqPage } from '../faq/faq';
 import { animationsList } from '../../app/animations';
 import { ProdutosPage } from '../produtos/produtos';
 import { CursosPage } from '../cursos/cursos';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -51,7 +52,9 @@ export class HistoricoPage {
   Cursos(){
     this.navCtrl.push(CursosPage);
   }
-
+  Home(){
+    this.navCtrl.push(HomePage);
+  }
 
 
 }

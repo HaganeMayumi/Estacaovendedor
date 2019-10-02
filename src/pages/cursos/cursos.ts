@@ -6,6 +6,7 @@ import { ChatPage } from '../chat/chat';
 import{ProdutosPage} from '../produtos/produtos';
 import{HistoricoPage} from '../historico/historico';
 import{ AuditoriaPage} from '../auditoria/auditoria';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the CursosPage page.
@@ -60,6 +61,10 @@ export class CursosPage {
   Cursos(){
     this.navCtrl.push(CursosPage);
   }
+  Home(){
+    this.navCtrl.push(HomePage);
+  }
+
   aumentar(e) {
     this.tap++
   }

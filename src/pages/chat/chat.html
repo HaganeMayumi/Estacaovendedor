@@ -13,10 +13,6 @@
     </ion-buttons>
     <ion-title *ngIf="!isOpen" class="animated bounce">
       CHAT
-
-
-
-
     </ion-title>
   </ion-navbar>
 
@@ -82,24 +78,24 @@
       </figure>
       <ion-list class="menu-nexus-list" no-lines padding [ngClass]="startAnim" *ngIf="isOpen">
 
-        <button ion-item (click)="goToAuditoria()">
-          <ion-icon name="md-barcode"></ion-icon> Auditoria
-        </button>
-        <button ion-item (click)="Chat()">
-          <ion-icon name="chatboxes"></ion-icon> Chat Clientes
-        </button>
-        <button ion-item (click)="Cursos()">
-          <ion-icon ios="ios-easel" md="md-easel"></ion-icon>Marketing
-        </button>
-        <button ion-item (click)="goToHistorico()">
-          <ion-icon name="paper"></ion-icon> Histórico
-        </button>
-        <button ion-item (click)="Faq()">
-          <ion-icon name="help-circle"></ion-icon> FAQ
-        </button>
-        <button ion-item>
-          <ion-icon name="log-out"></ion-icon> Sair
-        </button>
+          <button ion-item (click)="Home()">
+              <ion-icon ios="ios-home" md="md-home"></ion-icon> Home
+            </button>
+            <button ion-item (click)="goToAuditoria()">
+              <ion-icon name="md-barcode"></ion-icon> Auditoria
+            </button>
+            <button ion-item (click)="Chat()">
+              <ion-icon name="chatboxes"></ion-icon> Chat Clientes
+            </button>
+            <button ion-item (click)="Cursos()">
+              <ion-icon ios="ios-easel" md="md-easel"></ion-icon> Marketing
+            </button>
+            <button ion-item (click)="goToHistorico()">
+              <ion-icon name="paper"></ion-icon> Histórico
+            </button>
+            <button ion-item (click)="Faq()">
+              <ion-icon name="help-circle"></ion-icon> FAQ
+            </button>
       </ion-list>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <ion-header style="color:black;" no-border>
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-buttons left>
       <button *ngIf="!isOpen" ion-button icon-menu icon-only (click)="openNexus()">
         <img src="assets/icon/menu.svg" />
@@ -71,9 +71,7 @@
         <button ion-item (click)="Faq()">
           <ion-icon name="help-circle"></ion-icon> FAQ
         </button>
-        <button ion-item>
-          <ion-icon name="log-out"></ion-icon> Sair
-        </button>
+
       </ion-list>
     </div>
   </div>
