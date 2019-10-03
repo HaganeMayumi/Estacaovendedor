@@ -18,6 +18,7 @@ import{HistoricoPage} from '../historico/historico';
 export class AuditoriaPage {
   isOpen: boolean;
   startAnim: string;
+  menu: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   openNexus() {

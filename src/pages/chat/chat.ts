@@ -26,6 +26,7 @@ import { HomePage } from '../home/home';
 export class ChatPage {
   isOpen: boolean;
   startAnim:string;
+  ativar:boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }

@@ -10,6 +10,7 @@ page-home {
       transition: all 0.3s;
       .toolbar-title{
         color: black !important;
+        text-align: center;
       }
     }
   }
@@ -117,29 +118,32 @@ page-home {
       transform: translate3d(0,0,0);
     }
   }
-}
-////////////////CARD//////////////
+  ////////////////CARD//////////////
 
 
 
-.direc{
+  .direc{
   left: 10%;
 }
 ion-searchbar{
   .searchbar-input-container{
       .searchbar-input{
           border-radius: 20px;
-      }
+        }
   }
 }
 .back-button-md,
 .back-button-ios {
   color: black ;
 }
-.botao-delivery{
-  background: linear-gradient(#90E8AA, #32db64);
-}
+
 .card-delivery{
   background: linear-gradient(#ffffff, #da5a41);
   border-radius: 20px;
+  margin:0px;
+  height: 250px;
+}
+
+
+
 }

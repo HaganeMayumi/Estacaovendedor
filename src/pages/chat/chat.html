@@ -12,7 +12,7 @@
       </button>
     </ion-buttons>
     <ion-title *ngIf="!isOpen" class="animated bounce">
-      CHAT
+      Conversas Online
     </ion-title>
   </ion-navbar>
 
@@ -21,22 +21,25 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar placeholder="Pesquisar Cliente"></ion-searchbar>
-
-  <br>
 
   <ion-list>
-    <ion-list-header style="text-align: center;">Atendimento Benjamin</ion-list-header>
+    <ion-list-header style="text-align: center;">Fique atento ao seu Chat !</ion-list-header>
     <ion-item>
-      <ion-label inline> Ativar/Desativar Atendimento</ion-label>
-        <ion-toggle  color="secondary" checked="true"></ion-toggle>
+      <ion-label inline> Ativar/Desativar </ion-label>
+        <ion-toggle  color="secondary" [(ngModel)]="ativar" checked="true"></ion-toggle>
     </ion-item>
     <ion-item>
       <ion-card class="item-chat" style="border-radius: 10px">
         <ion-card-header>Cliente Fulano</ion-card-header>
-        <ion-avatar>
-          <ion-img src='assets/imgs/user.jpg' style="zoom: 1.5"></ion-img>
-        </ion-avatar>
+        <ion-item style="background-color: transparent">
+          <ion-avatar item-start>
+            <img src='assets/imgs/user.jpg' style="zoom: 1.5" />
+          </ion-avatar>
+        </ion-item>
+        <ion-card-content>
+          <p text-wrap>Status: Chamando para Chat</p>
+          <h2>Loja cidade Nova</h2>
+        </ion-card-content>
         <ion-buttons end>
           <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatGo()"
             >
@@ -53,9 +56,13 @@
     <ion-item>
       <ion-card class="item-chat" style="border-radius: 10px">
         <ion-card-header>Cliente Ciclano</ion-card-header>
-        <ion-avatar>
-          <ion-img src='assets/imgs/user.jpg' style="zoom: 1.5"></ion-img>
+        <ion-avatar item-start>
+          <img src='assets/imgs/user.jpg' style="zoom: 1.5" />
         </ion-avatar>
+        <ion-card-content>
+            <p text-wrap>Status: Chamando para Chat</p>
+            <h2>Loja Presidente Vargas</h2>
+          </ion-card-content>
         <ion-buttons end>
           <button ion-button color="secondary" style="border-radius: 10px" class="botao-chat" (click)="ChatGo()">
             <ion-icon name="text"></ion-icon>

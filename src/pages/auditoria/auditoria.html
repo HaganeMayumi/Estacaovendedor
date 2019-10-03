@@ -6,9 +6,24 @@
         </button>
       </ion-buttons>
       <ion-title *ngIf="!isOpen" class="animated bounce">
-        Auditoria
+        Auditoria de Vendas
       </ion-title>
     </ion-navbar>
+
+
+    <ion-toolbar *ngIf="!isOpen" no-border-top>
+        <ion-segment color="dark" [(ngModel)]="menu">
+          <ion-segment-button value="produtos">
+            Produtos
+          </ion-segment-button>
+          <ion-segment-button value="gerenciar">
+            Gerencia
+          </ion-segment-button>
+          <ion-segment-button value="geral">
+            Estatisticas
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
   </ion-header>
 
   <ion-content padding>
